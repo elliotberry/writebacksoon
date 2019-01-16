@@ -36,7 +36,7 @@ export default Scene.extend({
     }, {
       key: 'lover',
       text: 'a lover'
-    }])
+    }]);
 
     switch (person.key) {
       case 'friend': yield script.text('You linger over how you used to laugh together about the weirdest stuff.'); break;
