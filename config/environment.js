@@ -45,7 +45,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
-    ENV.rootURL = '/affinity-engine-visual-novel-quickstart/';
+    ENV.rootURL = '/';
 
   }
 
