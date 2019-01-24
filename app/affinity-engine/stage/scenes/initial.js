@@ -127,7 +127,7 @@ export default Scene.extend({
       case 'interest': yield script.text(`You write about something your ${person.key} cares about.`); break;
     }
 
-    yield script.text('You scratch out the letters "How are you?" and you...');
+    yield script.text('You start to write and then scratch out the words "How are you?" and you...');
 
     const howareyou = yield script.menu([{
       key: 'feel',
@@ -144,10 +144,10 @@ export default Scene.extend({
     }])
 
     switch (howareyou.key) {
-      case 'feel': yield script.text('feel badly for asking but, don\'t say so.'); break;
-      case 'pause': yield script.text(`pause to pray for your ${person.key}\'s wellbeing, reaching out with your spirit`); break;
-      case 'remember': yield script.text(`remember the last thing that your ${person.key} wrote to you.`); break;
-      case 'consider': yield script.text('briefly consider that you will not hear back because...');
+      case 'feel': yield script.text('You feel badly for asking but, don\'t say so.'); break;
+      case 'pause': yield script.text(`You pause to pray for your ${person.key}\'s wellbeing, reaching out with your spirit`); break;
+      case 'remember': yield script.text(`You remember the last thing that your ${person.key} wrote to you.`); break;
+      case 'consider': yield script.text('You briefly consider that you will not hear back because...');
           const briefly = yield script.menu([{
             key: 'transfer',
             text: 'transfer'
