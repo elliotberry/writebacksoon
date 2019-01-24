@@ -40,9 +40,9 @@ export default Scene.extend({
 
     switch (person.key) {
       case 'friend': yield script.text('You linger over how you used to laugh together about the weirdest stuff.'); break;
-      case 'family member': yield script.text('You think back to a simple task that took forever last week. You feel the familiar vacancy of the help you used to lend one another.'); break;
-      case 'penpal': yield script.text('Still images from news clippings and political posters float up in your mind. You don\'t really know this person. The memories aren\'t personal but, the injustice is.'); break;
-      case 'lover': yield script.text('The urgency and the desire you feel for this person are still fresh and freshly painful. You were finally just getting to know each other after years of secret crushes.'); break;
+      case 'family member': yield script.text('You think back to a simple task that took forever last week.'); ('You feel the familiar vacancy of the help you used to lend one another.'); break;
+      case 'penpal': yield script.text('Still images from news clippings and political posters float up in your mind.'); ('You don\'t really know this person.'); ('The memories aren\'t personal.'); ('But, the injustice is.'); break;
+      case 'lover': yield script.text('The urgency and the desire you feel for this person are still fresh and freshly painful.'); ('You were finally just getting to know each other after years of secret crushes.'); break;
     }
 
     yield script.text(`Before long, a mix of feelings rushes into the gap between you and your ${person.key}.`);
@@ -96,5 +96,96 @@ export default Scene.extend({
       case 'strength': yield script.text(`You want to put on a strong front. You write with conviction about the quickness of time and the skill of your ${person.key}\'s lawyer and all the things you are putting off doing until this is all over.`); break;
     }
 
+    yield script.text(`You take a deep breath and return to the page. You pick up your ${implement.key} again and begin to write about...`)
+
+    const lifeplaninterest = yield script.menu([{
+      key: 'life',
+      text: 'your life'
+    }, {
+      key: 'plan',
+      text: 'a plan'
+    }, {
+      key: 'interest',
+      text: 'an interest'
+    }])
+
+    switch (lifeplaninterest.key) {
+      case 'life': yield script.text(`You write about how work is going. How you are trying to learn how to dance from YouTube videos. How you still hate doing laundry. How you got an allergy test and are trying to give up dairy but you\’ll still get the biggest pizza you can find on the day that your ${person.key} gets out. With truffffflessssss.`); break;
+      case 'plan': yield script.text('You resume writing about a plan the two of you have talked about before.');
+          const plans = yield script.menu([{
+            key: 'creative',
+            text: 'a creative plan'
+          }, {
+            key: 'trip',
+            text: 'a trip'
+          }])
+          switch (plans.key) {
+            case 'creative': yield script.text('You write about your ongoing plan to make t-shirts together. You just came up with a great design this week.'); break;
+            case 'trip': yield script.text('You write about taking a roadtrip together exploring your home state in way neither of you have done before.'); break;
+          }
+      break;
+      case 'interest': yield script.text(`You write about something your ${person.key} cares about.`); break;
+    }
+
+    yield script.text('You scratch out the letters "How are you?" and you...');
+
+    const howareyou = yield script.menu([{
+      key: 'feel',
+      text: 'feel'
+    }, {
+      key: 'pause',
+      text: 'pause'
+    }, {
+      key: 'remember',
+      text: 'remember'
+    }, {
+      key: 'consider',
+      text: 'consider'
+    }])
+
+    switch (howareyou.key) {
+      case 'feel': yield script.text('feel badly for asking but, don\'t say so.'); break;
+      case 'pause': yield script.text(`pause to pray for your ${person.key}\'s wellbeing, reaching out with your spirit`); break;
+      case 'remember': yield script.text(`remember the last thing that your ${person.key} wrote to you.`); break;
+      case 'consider': yield script.text('briefly consider that you will not hear back because...');
+          const briefly = yield script.menu([{
+            key: 'transfer',
+            text: 'transfer'
+          }, {
+            key: 'trash',
+            text: 'trash'
+          }, {
+            key: 'phone',
+            text: 'phone call'
+          }, {
+            key: 'attention',
+            text: 'attention'
+          }])
+          switch (briefly.key) {
+            case 'transfer': yield script.text('because people are transferred all the time without warning.'); break;
+            case 'trash': yield script.text(`the guards will make sure your ${person.key}\'s letters will get lost.`); break;
+            case 'phone': yield script.text(`you\'re expecting ${person.key}\'s release soon but you\'re not expecting that a phone call will be granted to arrange safe transportation.`); break;
+            case 'attention': yield script.text('because this deportation hasn\'t garnered enough media attention.'); ('Yet.'); break;
+          }
+      break;
+    }
+
+    yield script.text('You continue writing.');
+
+    const keepwriting = yield script.menu([{
+      key: 'learn',
+      text: 'You share something that happened recently.'
+    }, {
+      key: 'dream',
+      text: 'You share a dream you had last week.'
+    }, {
+      key: 'scribble',
+      text: 'You scribble out most of what you\'ve written and start over.'
+    }])
+   switch (keepwriting.key) {
+    case 'learn': yield script.text('filler text'); break;
+    case 'dream': yield script.text('filler text'); break;
+    case 'scribble': yield script.text('filler text'); break;
+}
   })
 });
