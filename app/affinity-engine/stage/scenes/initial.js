@@ -197,7 +197,7 @@ export default Scene.extend({
             case 'transfer': yield script.text('...because people are transferred all the time without warning.'); break;
             case 'trash': yield script.text(`...the guards will make sure your ${person.key}\'s letters will get lost.`); break;
             case 'phone': yield script.text(`...you're expecting ${person.key}\'s release soon but you\'re not expecting that a phone call will be granted to arrange safe transportation.`); break;
-            case 'attention': yield script.text('...because this deportation hasn\'t garnered enough media attention.'); ('Yet.'); break;
+            case 'attention': yield script.text('...because this ICE raid hasn\'t garnered enough media attention.'); ('Yet.'); break;
           }
       break;
     }
@@ -250,7 +250,7 @@ export default Scene.extend({
     text: 'access to meds'
   }])
   switch (need.key) {
-    case 'commissary': yield script.text(`You have a little saved up a little you\’re going to deposit into your ${person.key}\’s commissary account tomorrow.`); break;
+    case 'commissary': yield script.text(`You have saved up a little you\’re going to deposit into your ${person.key}\’s commissary account tomorrow.`); break;
     case 'book': yield script.text(`You found the publisher of the book your ${person.key} mentioned.`);
     yield script.text(`They said they'll be able to ship directly to the prison but it might take awhile.`); break;
     case 'art': yield script.text(`You loved hearing your ${person.key}\'s description of what others have hung up on their walls.`);
@@ -340,13 +340,13 @@ const signoff = yield script.menu([{
 
 switch (signoff.key) {
 
-  case 'soon': yield script.text('PROMPT TO TYPE YOUR NAME AND LOCATION'); break;
-  case 'love': yield script.text('PROMPT TO TYPE YOUR NAME AND LOCATION'); break;
-  case 'miss': yield script.text('PROMPT TO TYPE YOUR NAME AND LOCATION'); break;
-  case 'goblins': yield script.text('PROMPT TO TYPE YOUR NAME AND LOCATION'); break;
-  case 'saga': yield script.text('PROMPT TO TYPE YOUR NAME AND LOCATION'); break;
-  case 'sincerely': yield script.text('PROMPT TO TYPE YOUR NAME AND LOCATION'); break;
-  case 'ofyou': yield script.text('PROMPT TO TYPE YOUR NAME AND LOCATION'); break;
+  case 'soon': yield script.text('You sign your name hastily, so as not to betray any doubt.'); break;
+  case 'love': yield script.text('You sign your nickname with a steady hand and a heavy heart.'); break;
+  case 'miss': yield script.text('You sign your name with deliberate care, as if the curls of the letters could wrap around the both of you.'); break;
+  case 'goblins': yield script.text('You add little drawings around your name.'); break;
+  case 'saga': yield script.text('You print your name confidently in all caps.'); break;
+  case 'sincerely': yield script.text('You sign your name clearly and drum your fingers on the table.'); break;
+  case 'ofyou': yield script.text('You sign your soberly.'); break;
 
 }
 yield script.text('You fold up the sheet of paper and run your fingers along these new creases, pressing deeply into the wood of the table.');
