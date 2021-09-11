@@ -286,7 +286,7 @@ switch (wish.key) {
   case 'knowledge': yield script.text(`For more people to know what ${person.key} were going through.`); break;
   case 'abolition': yield script.text('For the abolition of all prisons.');
   yield script.text('For the abolition of all policing.');
-  yield script.text('For an entirely new world shaped by collective care and black power.'); break;
+  yield script.text('For an entirely new world shaped by collective care.'); break;
   case 'peace': yield script.text('For some inner stability and peace.'); break;
   case 'unity': yield script.text(`For your ${person.key}\'s friend to get out of the SHU soon.`); break;
 }
