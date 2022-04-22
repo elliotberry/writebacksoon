@@ -2,7 +2,12 @@ import { Scene } from 'affinity-engine-stage';
 import { task } from 'ember-concurrency';
 
 export default Scene.extend({
-  start: task(function * (script) {
+  start: task(function * (script)
+{
+
+  var titleimage = script.image('titlejpeg').fadeIn();
+  yield script.pause("Enter")
+  titleimage.fadeOut();
     yield script.text('So tired.');
     yield script.text('But, you realize, it is only Tuesday evening.');
     yield script.text('You close the door behind you and head to the kitchen.');
